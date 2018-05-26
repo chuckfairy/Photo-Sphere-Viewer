@@ -33,6 +33,15 @@
   }
 }
 
+.psv-duration {
+  color: $psv-caption-color;
+  margin: $psv-buttons-padding;
+  white-space: nowrap;
+  text-align: center;
+  font-family: $psv-caption-font;
+  font-size: 0.9em;
+}
+
 .psv-spacer {
   @for $i from 1 through 10 {
     &--weight-#{$i} {
@@ -62,20 +71,21 @@
   }
 
   .psv-button-svg {
-    width: 100%;
+    width: $psv-buttons-height;
     transform: scale(1);
     transition: transform .3s ease;
 
     * {
       fill: $psv-buttons-color;
     }
+  }
 
-    .psv-button--hover-scale:not(.psv-button--disabled):hover & {
-      transform: scale(1.2);
-    }
+  &--hover-scale:not(&--disabled):hover &-svg {
+    transform: scale(1.2);
   }
 }
 
 @import 'buttons/autorotate';
 @import 'buttons/zoom';
 @import 'buttons/markers';
+@import 'buttons/volume';
